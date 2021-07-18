@@ -1,18 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import Book from './Book';
 
-class BookShelf extends Component {
-  static propTypes = {
-    books: PropTypes.array.isRequired,
-    changeShelf: PropTypes.func.isRequired
-  };
 
-  render() {
-    const { books, changeShelf } = this.props;
-
-    return (
-      <ol className="books-grid">
+function BookShelf(props){
+  const { books, changeShelf } = props;
+  return(
+    <ol className="books-grid">
         {books.map(book => (
           <Book
             book={book}
@@ -22,8 +15,8 @@ class BookShelf extends Component {
           />
         ))}
       </ol>
-    );
-  }
+
+  )
 }
 
 export default BookShelf;

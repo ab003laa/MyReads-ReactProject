@@ -1,44 +1,42 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import '../App.css'
 
 
-class ShelfChanger extends Component {
-  static propTypes = {
-    book: PropTypes.object.isRequired,
-    books: PropTypes.array.isRequired,
-    changeShelf: PropTypes.func.isRequired
-  };
+function ShelfChanger(props) {
 
-  updateShelf = event =>
-    this.props.changeShelf(this.props.book, event.target.value);
+  const updateShelf = data =>
+    props.changeShelf(props.book, data.target.value);
 
-  render() {
-    const { book, books } = this.props;
+    const { book, books } = props;
 
-    let currentShelf = 'none';
-
+    let shelfNow = '';
+    
+    
     for (let item of books) {
       if (item.id === book.id) {
-        currentShelf = item.shelf;
+        shelfNow = item.shelf;
         break;
       }
+      shelfNow = 'none'
     }
 
+
     return (
+
       <div className="book-shelf-changer">
-        <select onChange={this.updateShelf} defaultValue={currentShelf}>
+        <select onChange={updateShelf} defaultValue={shelfNow}>
           <option value="none" disabled>
             Move to...
           </option>
           <option value="currentlyReading">Currently Reading</option>
           <option value="wantToRead">Want to Read</option>
           <option value="read">Read</option>
-          <option value="none">None</option>
+          <option value="none"  >None</option>
         </select>
       </div>
     );
-  }
+  
 }
+
 
 export default ShelfChanger;

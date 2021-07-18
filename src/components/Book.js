@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ShelfChanger from './ShelfChanger';
 
-const Book = props => {
+
+function Book(props) {
   const { book, books, changeShelf } = props;
 
-  const coverImg =
-    book.imageLinks.thumbnail;
+  const bookCover = book.imageLinks && book.imageLinks.thumbnail
+
   const title = book.title ? book.title : 'No title available';
 
   return (
@@ -15,27 +15,21 @@ const Book = props => {
         <div className="book-top">
           <div
             className="book-cover"
-            style={{ backgroundImage: `url(${coverImg})` }}
+            style={{ backgroundImage: `url(${bookCover})` }}
           />
           <ShelfChanger book={book} books={books} changeShelf={changeShelf} />
         </div>
         <div className="book-title">{title}</div>
-        {
-        book.authors &&
-          book.authors.map((author, index) => (
-            <div className="book-authors" key={index}>
-              {author}
-            </div>
-          ))}
+        {book.authors && book.authors.map((author, index) => 
+        (<div className="book-authors" key={index}>{author}</div>))}
       </div>
     </li>
   );
-};
 
-Book.propTypes = {
-  book: PropTypes.object.isRequired,
-  books: PropTypes.array.isRequired,
-  changeShelf: PropTypes.func.isRequired
-};
+
+  
+}
+
+
 
 export default Book;

@@ -1,37 +1,38 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Book from './Book';
 import * as BooksAPI from '../BooksAPI';
 
+import Book from './Book';
+
+
 class Search extends Component {
-  static propTypes = {
-    books: PropTypes.array.isRequired,
-    changeShelf: PropTypes.func.isRequired
+    state = {
+      inputStr: '',
+      newBooks: [],
+      searchErr: false
   };
 
-  state = {
-    query: '',
-    newBooks: [],
-    searchErr: false
-  };
+  updateBooks = e => {
+    const inputStr = e.target.value;
+    this.setState({ inputStr });
 
-  getBooks = event => {
-    const query = event.target.value;
-    this.setState({ query });
-
-    if (query) {
-      BooksAPI.search(query.trim(), 20).then(books => {
-        books.length > 0
-          ? this.setState({ newBooks: books, searchErr: false })
-          : this.setState({ newBooks: [], searchErr: true });
+    if (inputStr !== '') {
+      BooksAPI.search(inputStr.trim() , 20)
+        .then(books => { 
+          if(books.length > 0){
+            this.setState({ newBooks: books, searchErr: false })
+          }
+           
+        
       });
+    }else  this.setState({ newBooks: [], searchErr: true });
 
-    } else this.setState({ newBooks: [], searchErr: false });
+    
+
   };
 
   render() {
-    const { query, newBooks, searchErr } = this.state;
+    const { inputStr, newBooks, searchErr } = this.state;
     const { books, changeShelf } = this.props;
 
     return (
@@ -44,8 +45,8 @@ class Search extends Component {
             <input
               type="text"
               placeholder="Search by title or author"
-              value={query}
-              onChange={this.getBooks}
+              value={inputStr}
+              onChange={this.updateBooks}
             />
           </div>
         </div>
