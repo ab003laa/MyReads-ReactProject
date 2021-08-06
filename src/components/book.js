@@ -52,7 +52,6 @@ const Book =(props)=>{
 }
 
 Book.propTypes={
-    book : propTypes.array.isRequired,
     moveBook : propTypes.func.isRequired
 }
 
