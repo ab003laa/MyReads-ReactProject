@@ -52,7 +52,8 @@ const Book =(props)=>{
 }
 
 Book.propTypes={
-    moveBook : propTypes.func.isRequired
+    book: propTypes.object.isRequired,
+    moveBook : propTypes.func.isRequired,
 }
 
 export default Book;
