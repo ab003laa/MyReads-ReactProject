@@ -27,7 +27,7 @@ const Home=(props)=>{
 }
 
 Home.propTypes={
-     book: propTypes.object.isRequired,
+     
     moveBook : propTypes.func.isRequired
 }
 
