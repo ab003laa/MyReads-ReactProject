@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/MyReads-ReactProject/static/css/main.a684504c.css",
+    "main.js": "/MyReads-ReactProject/static/js/main.de8809d5.js",
+    "index.html": "/MyReads-ReactProject/index.html",
+    "static/media/arrow-back.svg": "/MyReads-ReactProject/static/media/arrow-back.cd079cab42defead9875.svg",
+    "static/media/add.svg": "/MyReads-ReactProject/static/media/add.1b5d9b6afb5557f7992c.svg",
+    "static/media/arrow-drop-down.svg": "/MyReads-ReactProject/static/media/arrow-drop-down.4378492a3a09dbfc31ff.svg",
+    "main.a684504c.css.map": "/MyReads-ReactProject/static/css/main.a684504c.css.map",
+    "main.de8809d5.js.map": "/MyReads-ReactProject/static/js/main.de8809d5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a684504c.css",
+    "static/js/main.de8809d5.js"
+  ]
+}
