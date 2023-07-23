@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/MyReads-ReactProject/static/css/main.c1d651a4.css",
+    "main.css": "/MyReads-ReactProject/static/css/main.134f271d.css",
     "main.js": "/MyReads-ReactProject/static/js/main.dd201aca.js",
     "index.html": "/MyReads-ReactProject/index.html",
     "static/media/arrow-back.svg": "/MyReads-ReactProject/static/media/arrow-back.cd079cab42defead9875.svg",
     "static/media/add.svg": "/MyReads-ReactProject/static/media/add.1b5d9b6afb5557f7992c.svg",
     "static/media/arrow-drop-down.svg": "/MyReads-ReactProject/static/media/arrow-drop-down.4378492a3a09dbfc31ff.svg",
-    "main.c1d651a4.css.map": "/MyReads-ReactProject/static/css/main.c1d651a4.css.map",
+    "main.134f271d.css.map": "/MyReads-ReactProject/static/css/main.134f271d.css.map",
     "main.dd201aca.js.map": "/MyReads-ReactProject/static/js/main.dd201aca.js.map"
   },
   "entrypoints": [
-    "static/css/main.c1d651a4.css",
+    "static/css/main.134f271d.css",
     "static/js/main.dd201aca.js"
   ]
 }
